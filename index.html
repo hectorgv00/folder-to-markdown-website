@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>ZIP to markdown</title>
+    <link
+      rel="stylesheet"
+      href="styles/style.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.ico"
+      type=" image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#">
+        <img
+          src="./assets/images/project-to-file-logo.svg"
+          alt="Logo"
+        />
+      </a>
+      <h1>ZIP to markdown</h1>
+    </header>
+
+    <main>
+      <h2>
+        Insert a zip of the folder of your project and get a markdown file
+      </h2>
+
+      <div class="form">
+        <div class="label-and-button">
+          <div class="custom-file-upload">
+            <input
+              type="file"
+              id="file"
+              name="file"
+              accept=".zip"
+              oninput="getInput(event.target.files[0])"
+            />
+            <img
+              id="icon"
+              src="./assets/images/zip-file.svg"
+              alt="zip-icon"
+            />
+            <p>Choose a zip file or drag it here</p>
+          </div>
+        </div>
+        <p id="filename"></p>
+        <button
+          id="convertButton"
+          class="disabled"
+          type="button"
+          onclick="sendDataToPython(event)"
+        >
+          Convert
+        </button>
+      </div>
+
+      <div class="description">
+        <p>
+          This tool will convert the folder structure of your project into a
+          markdown file!
+        </p>
+        <p>
+          The markdown file will contain the folder structure of your project in
+          a tree format, and all the comments and docstrings will be included in
+          the markdown file as documentation.
+        </p>
+        <p>
+          This tool is useful for documenting your project structure. You can
+          use the markdown file to share the project structure with your team
+          members or to create documentation for your project.
+        </p>
+      </div>
+    </main>
+
+    <div id="droparea">
+      <p>Drop your file here</p>
+    </div>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
